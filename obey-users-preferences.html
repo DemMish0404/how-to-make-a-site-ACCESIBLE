@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<style>
+  
+
+  /* подключаем шрифты для дислексиков  */
+   @font-face {
+   
+   font-family: 'lexie readable';
+   src:
+     local('lexie readable regular'),
+      /* обычно больше расширений(woff , woff2 и тд) но скачал я только такие */
+     url('./dyslexic-fonts/lexie-readable/LexieReadable-Regular.ttf') format('truetype');
+   
+     font-weight: 400;
+     
+ }
+
+ @font-face {
+   
+   font-family: 'lexie readable';
+   src:
+     local('lexie readable bold'),
+      /* обычно больше расширений(woff , woff2 и тд) но скачал я только такие */
+     url('./dyslexic-fonts/lexie-readable/LexieReadable-Bold.ttf') format('truetype');
+   
+     font-weight: bold;
+     
+ }
+
+
+   :root{
+      --main-color : #000;
+      --background-color: #fff;
+   }
+   body{
+      
+      font-size: 1.5rem;
+      color: var(--main-color);
+      background-color: var(--background-color);
+   }
+
+   body.dislexic{
+      /* он работает только на английские буквы конкретно этот шрифт */
+      font-family: 'lexie readable' ;
+   }
+
+
+   @media (prefers-color-scheme: dark) {
+      /* переменные меням  */
+      :root{
+      --main-color : whitesmoke;
+      --background-color: rgb(58, 58, 58);
+   }
+   
+   @media (prefers-reduced-motion: reduce) {
+      /* если есть резкие анимации на сайте и у пользователя пожелания стоят что резкие анимации следует выключать то следует на сайте их сбросить */
+
+      /* а вообще резкие анимации не нужно добавлять - они редко когда бывают красивые */
+   }
+
+   @media (prefers-contrast: more) {
+      /* если у пользователя в настройках стоит повышение контраста - то желательно его повысить на сайте (в вообще легче просто следовать желательному уровню контрастности) */
+   }
+   
+   }
+
+</style>
+
+<body>
+   <h1>нужно пользовательским настройкам повелеваться</h1>
+   <h4>таким как:</h4>
+   <ul>
+      <li>по умолчанию настроенная тема (светлая/темная)</li>
+      <li>желание без резких анимаций</li>
+      <li>если дислексик или проблемы с чтением подключить шрифт для дислексиков (<a style="color: rgb(253, 3, 3);" href="https://vk.com/wall-166297414_597">шрифты для дислексиков</a>) </li>
+      
+   </ul>
+
+
+   !проверять на сайт на доступность можно в инструментах разработчика в вкладке 'light house' и он скажет что можно подправить
+
+
+   <button onclick="document.body.classList.toggle('dislexic')">повысить читаемость текста</button>
+   <hr>
+   !шрифт для дислексиков который я подключил работает только на английские буквы
+</body>
+</html>

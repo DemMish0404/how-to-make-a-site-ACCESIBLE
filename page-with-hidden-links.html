@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<!--* создаем скрытые ссылки которые будут видны только для людей которые двигуются по сайту через клавиатуру (люди с ограниченными возможностями в основном): 
+
+ нужны они чтобы пропускать громадные блоки чтобы люди могли не пролистывать вручную а просто пропустить и перейти на какую то другую часть страницы (допустим при огромной навигации или огромных частях сайта , которые необязательны и человеку захочится пропустить)  -->
+
+ <!--* как делать скрытую ссылку : просто скрываешь/задвигаешь за страницу чтобы нельзя было кликнуть по-умолчанию. а когда кнопкой TAB доходишь вдвигаешь чтобы было видно . в самой ссылке указываешь куда она ведет через "href" и текст в ссылке понятный чтобы было ясно куда ссылка ведет  -->
+
+ <style>
+   /* 
+      !!!!!!!!
+      просто так фокус не убирать , иначе люди с ограниченными возможнастями вряд ли смогут пользоваться сайтом (особенно через клавиатуру)
+
+      !!! в данном случае я стандартный фокус убираю и задаю свой кастомный . если стандартный убираешь то обязательно добавь красивый кастомный или просто не убирай стандартный!
+   */
+   html{
+      scroll-behavior: smooth;
+   }
+   :focus{
+      outline: none;
+   }
+   :not(.hidden-link):focus-visible{
+      /* эти стили не применяются к классу hidden-link */
+      border: 5px solid red;
+   }
+
+
+   .hidden-link{
+      translate: 0px -100%;
+      position: fixed;
+      inset-block-start: 0;
+      inset-inline-end: 0;
+      width: calc(100vw - 10px) ;
+      padding: 5px;
+      background-color: grey;
+      transition: all 150ms ease;
+   }
+   .hidden-link:focus{
+      translate: 0;
+   }
+ </style>
+<body>
+   <div class="wrapper">
+      <header id='header'>
+         <a href="#main-content" class="hidden-link">go to the main content</a>
+         <a href="">Logo</a>
+         <nav>
+            <ul>
+               <li>
+                  <a href="">home</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">about us</a>
+               </li>
+               <li><a href="">products</a></li>
+            </ul>
+         </nav>
+      </header>
+      <main id="main-content">
+         <section>
+            <h1>main section</h1>
+            <p>
+               Lorem ipsum dolor sit <a href="#header" class="hidden-link">вернуться в начало страницы</a> <a href="" style='color: rgb(0, 20, 199);'>click to go somewhere</a> amet consectetur adipisicing elit. Eos odit a quae dolores, nobis eaque. Officia tempore fugiat totam architecto doloribus consequuntur inventore, natus error ipsa ducimus unde quam dolor sint necessitatibus vel molestias nemo ut consequatur ullam! Explicabo et culpa quos minima corporis magni atque, eligendi officiis. Error officia aspernatur accusamus vel necessitatibus, vitae nostrum rem ducimus eos ratione, blanditiis voluptatibus ipsum ea architecto repellendus fugit quo neque quidem! Consequatur placeat deleniti temporibus ipsam voluptates ex cumque porro modi officiis quaerat, nisi laboriosam quos doloribus laudantium provident incidunt vero! Obcaecati voluptatem asperiores nobis commodi numquam esse quos maiores amet architecto voluptatum? Laboriosam hic omnis quam reprehenderit accusamus maiores voluptate necessitatibus numquam illum exercitationem dicta quisquam, provident dolore facere odio earum architecto, consequuntur voluptatibus rem sint ut soluta. Ipsa, sed sunt mollitia est quaerat expedita obcaecati nisi autem cum distinctio dolore vitae quis temporibus dignissimos reprehenderit? Ullam quasi beatae, facilis quis dicta qui molestiae a cumque velit corporis? At, magni facilis? Sapiente similique cumque corrupti cum, vel beatae in adipisci ut sequi dolorum assumenda? Dicta blanditiis veniam eius doloribus odio, ipsum cumque, magnam eum assumenda placeat suscipit amet quisquam natus eligendi doloremque magni praesentium nesciunt sequi aperiam ut aliquam omnis maiores culpa vel! Inventore explicabo blanditiis ut a assumenda! Eum tempora provident libero, sed sapiente, ipsum, corporis odio aspernatur quibusdam pariatur veritatis obcaecati beatae! Temporibus iste optio ipsam autem qui similique tenetur fuga ullam eligendi maiores voluptatibus, cumque voluptate. Voluptates animi eaque ex doloremque reiciendis, officiis aliquam quisquam iure eius repellat magni necessitatibus natus sunt soluta. Eum autem sed, libero corrupti reprehenderit vel ipsum ullam eveniet rerum magnam blanditiis aspernatur repellendus. In molestiae placeat necessitatibus, voluptatum dolores non ad tenetur a? Voluptas repellat soluta natus aperiam, harum iure repellendus quae, eligendi aspernatur ipsa quisquam. Quam deserunt nulla odit aspernatur inventore suscipit iste a exercitationem quo tempora eos fugit perferendis deleniti nostrum corporis, ex velit consequatur nihil accusantium eligendi in. Sint voluptatum necessitatibus adipisci magni, quae corporis. Eveniet optio rerum amet. Magni suscipit molestias repellat fuga quidem fugit, minus aut dicta perferendis ipsa quod ipsam aliquid a est nemo perspiciatis doloremque consequuntur delectus! Debitis, ipsum, facere alias quidem dolorum tempora sint, accusantium voluptate hic laborum quibusdam accusamus dolorem? Autem ab quam ad repellat suscipit doloremque? Optio unde delectus, nam voluptas veritatis in! Ea blanditiis itaque, nam sunt, facere non doloribus autem dicta molestiae rerum natus illum sapiente ipsam optio eius dolorem sit delectus labore quae! Quos voluptas, asperiores impedit ad eligendi amet provident molestiae rem! Quos eum amet quod, voluptates, magnam illo incidunt consectetur a ab labore nisi, eaque consequuntur. Velit tempore quidem dolor non illum omnis laborum deleniti temporibus, ratione aspernatur accusantium alias, architecto aperiam nisi quae maiores quisquam consequuntur. Deleniti repellat rerum maiores ratione fugiat soluta porro quia sint possimus placeat, tempore numquam dolores provident nostrum illo! Itaque quaerat aut facere nisi officia soluta, nemo ea provident deserunt iusto quod molestias earum eligendi, consequuntur, consequatur fuga explicabo accusamus. Saepe animi, accusantium molestias eaque itaque earum laborum voluptas ipsa nesciunt eligendi nihil in architecto unde doloribus quisquam sunt corrupti est maiores magni voluptatibus qui neque omnis impedit. Eum labore aliquam, odit natus repudiandae asperiores sunt accusantium porro dolorum itaque excepturi non laboriosam facere beatae quidem similique. Soluta tempora nulla excepturi et sapiente aliquam, incidunt, tempore ipsa explicabo eligendi aperiam voluptatibus unde porro ad veniam alias sed dolores officia ullam iusto rerum, accusantium architecto. Numquam dolorum iure, suscipit incidunt voluptas blanditiis tenetur tempora qui eos. Nulla repellat voluptatem explicabo! Animi, doloribus ullam. Necessitatibus tempore amet perspiciatis, animi molestiae porro voluptas hic eum commodi aliquid quae quos temporibus, in officiis ad pariatur eos unde eius dicta suscipit accusantium minus similique rem? Natus ullam est modi minus inventore ipsa magni qui asperiores, alias, sequi praesentium quas. Itaque cupiditate cumque et, totam reprehenderit praesentium dicta sapiente exercitationem in. Quasi totam delectus dicta repellat ipsam, porro quod repellendus consequuntur enim temporibus, vero molestias distinctio culpa officia natus commodi, labore omnis tenetur! Eius soluta exercitationem saepe, vitae modi aspernatur alias error nihil velit est corporis doloremque suscipit. Aliquam pariatur error assumenda blanditiis quia maxime animi velit suscipit accusamus est, possimus illum, beatae molestias dolorem, amet magni inventore veritatis incidunt quod voluptate alias distinctio in. Voluptate tenetur rerum ipsam reprehenderit deserunt. Quia blanditiis, sed vero sequi ullam non, perferendis minus facere nulla adipisci, maxime accusamus quae sit. Maiores, distinctio perspiciatis? Distinctio minima repellat, beatae soluta ratione nihil, voluptas, aut quo hic animi impedit. Labore, perferendis adipisci enim voluptatibus, ab dicta tenetur voluptates qui iste ipsam cupiditate quas officia atque in corrupti illum facere nobis dolorum accusamus dignissimos, iusto praesentium voluptatum. Neque assumenda error iure modi atque vel numquam quasi, debitis necessitatibus accusantium perferendis magnam praesentium dolorem blanditiis ducimus quisquam totam tempore fugiat. Quibusdam iusto ipsam voluptatum ex doloremque voluptas odit, nostrum ratione quia deserunt reprehenderit, debitis illum inventore amet? Laborum facilis, ex consequatur officia harum molestiae amet. Praesentium doloribus, temporibus quam deleniti soluta, error rem, consequatur exercitationem odit quo modi! Ratione laboriosam perferendis quia ducimus deserunt. Dolores cum molestiae, vero praesentium nihil explicabo, officia placeat tenetur totam quos distinctio nobis enim. Rem rerum unde accusamus, voluptatibus, ab enim corporis velit repudiandae aliquid, quibusdam qui. Aut esse ratione excepturi iusto in culpa consequuntur nisi id molestiae voluptatibus quaerat, dolores molestias, sit temporibus minima inventore, quas nam dolor magni perspiciatis optio sunt! Distinctio voluptates vitae harum est? Labore omnis excepturi, natus eveniet quo tempore eligendi praesentium officia magnam ea, corrupti ex odio eaque itaque commodi veniam! Ex accusantium, iusto fugiat explicabo voluptates quasi ipsa alias tenetur assumenda eum voluptas eveniet illo facilis doloribus fuga ducimus officiis tempora recusandae vero facere soluta veritatis architecto. Quidem reprehenderit qui voluptates iste exercitationem unde iusto rerum aliquid? Veritatis similique molestias earum iure fuga dignissimos ea inventore magni, consequatur voluptatem voluptate illo sed, sunt illum dicta distinctio necessitatibus eum repudiandae iusto quibusdam quo, molestiae iste animi mollitia. Tempora sed quia, dolores architecto maxime fuga! Dolores totam eveniet repudiandae, reiciendis voluptatum distinctio possimus iusto vero architecto cumque fugit dicta velit amet id dolor nulla praesentium.
+
+            </p>
+            <button>click to go somewhere</button>
+         </section>
+         <section>
+            <h2>another section</h2>
+            <h3>a gigantic list with some stuff</h3>
+            <ol>
+               <li>hui tebe 1</li>
+               <li>hui tebe 2</li>
+               <li>hui tebe 3</li>
+               <li>hui tebe 4</li>
+               <li>hui tebe 5</li>
+               <li>hui tebe 6</li>
+               <li>hui tebe 7</li>
+               <li>hui tebe 8</li>
+               <li>hui tebe 9</li>
+               <li>hui tebe 10</li>
+               <li>hui tebe 11</li>
+               <li>hui tebe 12</li>
+               <li>hui tebe 13</li>
+               <li>hui tebe 14</li>
+               <li>hui tebe 15</li>
+               <li>hui tebe 16</li>
+               <li>hui tebe 17</li>
+               <li>hui tebe 18</li>
+               <li>hui tebe 19</li>
+            </ol>
+            <button>click to go somewhere</button>
+         </section>
+      </main>
+      <footer>
+         <hr>
+         footer
+         <nav>
+            <a href="#go-back-link" class="hidden-link">пропустить длинную навигацию в футере</a>
+            <ul>
+               <li>
+                  <a href="">home</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">another page</a>
+               </li>
+               <li>
+                  <a href="">about us</a>
+               </li>
+               <li><a href="">products</a></li>
+            </ul>
+         </nav>
+         
+         <a id="go-back-link" href="#header" class="hidden-link">вернуться в начало страницы</a> 
+      </footer>
+   </div>
+</body>
+</html>
